@@ -43,6 +43,8 @@ RUN chmod +x /usr/local/bin/dind-entrypoint.sh
 # Expose the Docker socket
 VOLUME /var/lib/docker
 
+RUN apt-get install -y make
+
 RUN mkdir -p ./app/backend
 COPY ./backend/ ./app/backend
 

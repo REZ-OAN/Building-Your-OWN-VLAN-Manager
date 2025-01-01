@@ -27,9 +27,10 @@ To build a lightweight, user-friendly tool to create, configure, and manage VLAN
 - Knowledge of networking tools in linux (i.e iroute2, net-tools, traceroute etc).
 ## My Findings
 - Creating Dind Image From Scratch
+- Executing system command on the host from the container
 ## Steps To Follow
 - [Setting up `DinD` image](./docs/dind_image_creation.md)
 - Setting up Basic configs for Backend and Frontend
-
+- Setting up The inner Container for Backend Service to execute command in the outer container or DinD image
 ## References
 - [Creating a Docker in Docker (DinD) container with any base image](https://medium.com/@ferdinandklr/creating-a-docker-in-docker-dind-container-with-any-base-image-7ce3a4d44021)
