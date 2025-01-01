@@ -21,8 +21,10 @@ To build a lightweight, user-friendly tool to create, configure, and manage VLAN
 - Visualization of VLAN topology and configuration.
 
 ## Requirements
-- Knowledge of Linux and Bash Scripting
-- Intermediate knowledge of Docker 
+- Knowledge of Linux and Bash Scripting.
+- Intermediate knowledge of Docker.
+- Knowledge of Networking and LAN, SWITCH.
+- Knowledge of networking tools in linux (i.e iroute2, net-tools, traceroute etc).
 ## My Findings
 - Creating Dind Image From Scratch
 ## Steps To Follow
