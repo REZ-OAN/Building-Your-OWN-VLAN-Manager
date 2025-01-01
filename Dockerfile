@@ -43,6 +43,12 @@ RUN chmod +x /usr/local/bin/dind-entrypoint.sh
 # Expose the Docker socket
 VOLUME /var/lib/docker
 
+RUN mkdir -p ./app/backend
+COPY ./backend/ ./app/backend
+
+RUN mkdir -p ./app/frontend
+COPY ./frontend/ ./app/frontend
+
 # Set the entrypoint
 ENTRYPOINT ["/usr/local/bin/dind-entrypoint.sh"]
 CMD ["bash"]
