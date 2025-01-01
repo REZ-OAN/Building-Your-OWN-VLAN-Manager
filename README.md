@@ -26,7 +26,7 @@ To build a lightweight, user-friendly tool to create, configure, and manage VLAN
 ## My Findings
 - Creating Dind Image From Scratch
 ## Steps To Follow
-- [Setting up `DIND` image](./docs/dind_image_creation.md)
+- [Setting up `DinD` image](./docs/dind_image_creation.md)
 
 ## References
 - [Creating a Docker in Docker (DinD) container with any base image](https://medium.com/@ferdinandklr/creating-a-docker-in-docker-dind-container-with-any-base-image-7ce3a4d44021)
