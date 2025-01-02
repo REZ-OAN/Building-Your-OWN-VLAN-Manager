@@ -43,7 +43,12 @@ RUN chmod +x /usr/local/bin/dind-entrypoint.sh
 # Expose the Docker socket
 VOLUME /var/lib/docker
 
-RUN apt-get install -y make
+RUN apt-get install -y \
+    make \
+    python3 \
+    python3-pip \
+    python3-venv 
+
 
 RUN mkdir -p ./app/backend
 COPY ./backend/ ./app/backend
@@ -51,6 +56,8 @@ COPY ./backend/ ./app/backend
 RUN mkdir -p ./app/frontend
 COPY ./frontend/ ./app/frontend
 
+EXPOSE 5000
+EXPOSE 8080
 # Set the entrypoint
 ENTRYPOINT ["/usr/local/bin/dind-entrypoint.sh"]
 CMD ["bash"]
