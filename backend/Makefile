@@ -1,33 +1,15 @@
-# Image name
-IMAGE_NAME = backend-image
+# Variables
+API_URL = http://localhost:5000/vlan-bridge
+JSON_PAYLOAD = '{"name": "br0", "subnet": "192.168.1.1/24"}'
 
-# Container name
-CONTAINER_NAME = backend-container
+req-install :
+	pip3 install -r requirements.txt
+start-app :
+	python3 app.py
 
-# Build the Docker image
-build-backend:
-	docker build -t $(IMAGE_NAME) .
-
-# Run the container
-run-backend:
-	docker run -d \
-		--name $(CONTAINER_NAME) \
-		--privileged \
-		--cap-add=NET_ADMIN \
-		--pid=host \
-		--network=host \
-		$(IMAGE_NAME)
-
-# Stop and remove the container
-stop-backend:
-	docker stop $(CONTAINER_NAME) || true
-	docker rm $(CONTAINER_NAME) || true
-
-# Rebuild and restart the container
-restart-backend: stop build run
-
-# Remove the container and image
-clean-backend: stop-backend	
-	docker rmi $(IMAGE_NAME) || true
-
-.PHONY: build run stop restart clean
+test-vlan-bridge:
+	@echo "Testing VLAN Bridge creation... route /vlan-bridge"
+	curl -X POST $(API_URL) \
+		-H "Content-Type: application/json" \
+		-d $(JSON_PAYLOAD)
+.PHONY: req-install start-app
